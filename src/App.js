@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import DynamicReactDOMLoader from './component/DynamicReactDOMLoader';
+import DynamicPreactDOMLoader from './component/DynamicPreactDOMLoading';
 function App() {
+  const root = document.getElementById('root');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h1>Hello, World!!</h1>
+        <p>This is a dynamic ReactDOM loading example.</p>
+        {root && <>
+          <DynamicReactDOMLoader></DynamicReactDOMLoader>
+          <DynamicPreactDOMLoader></DynamicPreactDOMLoader>
+        </>}
+        <p>=================</p>
     </div>
-  );
+);
 }
 
 export default App;
